@@ -24,6 +24,8 @@
     "passport": "0.3.2",
     "passport-local": "1.0.0",
     "express-session": "1.13.0",
-    "winston": "2.2.0"
+    "winston": "2.2.0",
+    "nedb": "1.8.0",
+    "camo": "0.12.1"
   }
 }

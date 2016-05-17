@@ -1,9 +1,7 @@
-'use strict';
-
 const notAuthorizedError = require('../common/errors').notAuthorized;
 
 module.exports = (req, res, next) => {
-    if (req.user) {
+    if (req.session.passport && req.session.passport.user) {
         return next();
     }
 

@@ -1,5 +1,3 @@
-'use strict';
-
 const notFoundError = require('../common/errors').notFound;
 
 module.exports = (req, res, next) => {
