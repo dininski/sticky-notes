@@ -1,0 +1,29 @@
+{
+  "name": "sticky-notes",
+  "version": "1.0.0",
+  "description": "Sticky notes",
+  "main": "main.js",
+  "scripts": {
+    "start": "NODE_PATH=app node ./app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dininski/xogito-task.git"
+  },
+  "keywords": [],
+  "author": "Vasil Dininski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dininski/xogito-task/issues"
+  },
+  "homepage": "https://github.com/dininski/xogito-task#readme",
+  "dependencies": {
+    "express": "4.13.4",
+    "body-parser": "1.15.1",
+    "cookie-parser": "1.4.1",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0",
+    "express-session": "1.13.0",
+    "winston": "2.2.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "sticky-notes",
+  "description": "Sticky notes",
+  "authors": [
+    "Vasil Dininski"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dininski/xogito-task",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
