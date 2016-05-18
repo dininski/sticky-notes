@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router({mergeParams: true});
-const apiRouter = require('./api');
+const apiRouter = require('./api/index');
 const notFound = require('../middleware/notFound');
 
 router.use('/api', apiRouter);

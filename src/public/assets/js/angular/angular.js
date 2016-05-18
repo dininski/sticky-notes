@@ -6770,7 +6770,7 @@ function $TemplateCacheProvider() {
  *   value of `parentModel` on the parent scope. Changes to `parentModel` will be reflected in
  *   `localModel` and vice versa. Optional attributes should be marked as such with a question mark:
  *   `=?` or `=?attr`. If the binding expression is non-assignable, or if the attribute isn't
- *   optional and doesn't exist, an exception ({@link error/$compile/nonassign `$compile:nonassign`})
+ *   optional and doesn't exist, an exception ({@link notAuthenticatedError/$compile/nonassign `$compile:nonassign`})
  *   will be thrown upon discovering changes to the local value, since it will be impossible to sync
  *   them back to the parent scope. By default, the {@link ng.$rootScope.Scope#$watch `$watch`}
  *   method is used for tracking changes, and the equality check is based on object identity.

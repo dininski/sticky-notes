@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
     notFound: {
         errorCode: 1000,
@@ -12,5 +10,13 @@ module.exports = {
     notAuthorized: {
         errorCode: 1002,
         message: 'You are not authorized to access this resource'
+    },
+    authenticationFailed: {
+        errorCode: 1003,
+        message: 'Authentication failed'
+    },
+    databaseError: {
+        errorCode: 1004,
+        message: 'General database error'
     }
 };
