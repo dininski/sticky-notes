@@ -1,9 +1,12 @@
 const express = require('express');
 const notesRouter = express.Router({mergeParams: true});
-const errors = require('../../../../common/errors');
-const db = require('../../../../database');
-const Note = require('../../../../model/Note');
-const User = require('../../../../model/User');
+const errors = require('../../common/errors');
+const db = require('../../database');
+const Note = require('../../model/Note');
+const User = require('../../model/User');
+const restrictedRoute = require('../../middleware/restrictedRoute');
+
+notesRouter.use(restrictedRoute);
 
 notesRouter.get('/', (req, res, next) => {
     db.get()

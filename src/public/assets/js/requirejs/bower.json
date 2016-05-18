@@ -1,7 +1,6 @@
 {
   "name": "requirejs",
-  "version": "2.2.0",
-  "ignore": [],
+  "version": "2.1.14",
   "homepage": "http://requirejs.org",
   "authors": [
     "jrburke.com"
@@ -11,7 +10,5 @@
   "keywords": [
     "AMD"
   ],
-  "license": [
-    "MIT"
-  ]
+  "license": "new BSD, and MIT"
 }

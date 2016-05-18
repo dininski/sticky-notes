@@ -1,11 +1,10 @@
 const express = require('express');
-const restrictedRoute = require('../../../middleware/restrictedRoute');
+const restrictedRoute = require('../../middleware/restrictedRoute');
 const usersRouter = express.Router({mergeParams: true});
 const passport = require('passport');
-const notesRouter = require('./notes/index');
-const db = require('../../../database');
-const User = require('../../../model/User');
-var errors = require('../../../common/errors');
+const db = require('../../database');
+const User = require('../../model/User');
+var errors = require('../../common/errors');
 const notAuthenticatedError = errors.notAuthenticated;
 
 usersRouter.post('/login', (req, res, next) => {
@@ -56,7 +55,7 @@ usersRouter.get('/', (req, res, next) => {
             if (!user) {
                 return res.status(404).json(errors.notFound);
             }
-            
+
             res.json(user);
         })
         .catch((err) => {
@@ -64,5 +63,4 @@ usersRouter.get('/', (req, res, next) => {
         });
 });
 
-usersRouter.use('/:userId/notes', notesRouter);
 module.exports = usersRouter;

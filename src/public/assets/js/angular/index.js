@@ -1,2 +1,2 @@
-require('./public/assets/js/angular/angular');
+require('./angular');
 module.exports = angular;
