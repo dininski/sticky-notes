@@ -6,7 +6,7 @@ define(['angular'], function (angular) {
                 $scope.notes = notes;
             })
             .catch(function (err) {
-
+                console.log(JSON.stringify(err));
             });
 
         User.me()

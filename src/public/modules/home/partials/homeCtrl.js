@@ -1,5 +1,9 @@
 define(['angular'], function (angular) {
     return ['$scope', '$state', 'User', function ($scope, $state, User) {
+        function validateUser(user) {
+            return user && user.username && user.password;
+        }
+
         function loginUser(user) {
             return User.login({username: user.username, password: user.password})
                 .$promise
@@ -8,23 +12,28 @@ define(['angular'], function (angular) {
                 })
                 .catch(function (err) {
                     console.log(JSON.stringify(err));
-                })
+                    alert(err);
+                });
         }
 
         $scope.login = function (user) {
-            return loginUser(user);
+            if (validateUser(user)) {
+                return loginUser(user);
+            }
         };
 
         $scope.register = function (user) {
-            var userData = {username: user.username, password: user.password};
-            var newUser = new User(userData);
-            newUser.$save()
-                .then(function () {
-                    return loginUser(userData);
-                })
-                .catch(function (err) {
-                    console.log(JSON.stringify(err));
-                })
+            if (validateUser(user)) {
+                var userData = {username: user.username, password: user.password};
+                var newUser = new User(userData);
+                newUser.$save()
+                    .then(function () {
+                        return loginUser(userData);
+                    })
+                    .catch(function (err) {
+                        console.log(JSON.stringify(err));
+                    });
+            }
         };
     }];
 });

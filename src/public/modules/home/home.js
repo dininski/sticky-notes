@@ -7,10 +7,11 @@ define(
     function (angular, uiRouter, homeCtrl) {
         var home = angular.module('home', ['ui.router']);
 
-        home.config(['$stateProvider', function ($stateProvider) {
+        home.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, urlRouterProvider) {
+            urlRouterProvider.otherwise('/home');
             $stateProvider
                 .state('home', {
-                    url: '',
+                    url: '/home',
                     templateUrl: 'modules/home/partials/home.html',
                     controller: homeCtrl
                 });
