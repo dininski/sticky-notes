@@ -1,9 +1,9 @@
 <header>
-    <div>Welcome, {user.username}</div>
-    <div ng-click="logout()">Log out</div>
+    <span>Welcome, {{user.username}}</span>
+    <span class="logout-btn" ng-click="logout()">Log out</span>
 </header>
 <div ng-drop="true" class="drop-area"></div>
-<div ng-click="addNote()">Add new note</div>
+<span class="add-note" ng-click="addNote()">Add new note</span>
 
 <div ng-repeat="note in notes">
     <single-note note="note"></single-note>

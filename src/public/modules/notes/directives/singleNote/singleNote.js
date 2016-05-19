@@ -5,8 +5,7 @@ define([], function () {
                 .$promise
                 .then(function () {
                     if (newPosition) {
-                        note.position.xPos = newPosition.x;
-                        note.position.yPos = newPosition.y;
+                        note.position = newPosition;
                     }
                 });
         }
@@ -18,8 +17,9 @@ define([], function () {
             },
             link: function (scope, element, attrs) {
                 scope.onDragComplete = function (obj, event) {
-                    var updateExpression = {position: {xPos: event.x, yPos: event.y}};
-                    onNoteUpdate(scope.note, updateExpression, {x: event.x, y: event.y});
+                    var newPosition = {xPos: event.x, yPos: event.y};
+                    var updateExpression = {position: newPosition};
+                    onNoteUpdate(scope.note, updateExpression, newPosition);
                 };
 
                 scope.onInputBlur = function () {

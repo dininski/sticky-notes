@@ -1,11 +1,18 @@
 define(['angular'], function (angular) {
     return ['$scope', '$state', 'Note', 'User', function ($scope, $state, Note, User) {
-        Note.get().$promise
+        Note.get()
+            .$promise
             .then(function (notes) {
                 $scope.notes = notes;
             })
             .catch(function (err) {
 
+            });
+
+        User.me()
+            .$promise
+            .then(function (user) {
+                $scope.user = user;
             });
 
         $scope.addNote = function () {
