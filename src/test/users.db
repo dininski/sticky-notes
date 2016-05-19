@@ -1,4 +1,6 @@
-{"username":"test","password":"test","_id":"A5DekCo2VbS1P0QD"}
-{"username":"fdafdas","password":"fdasfdsa","_id":"ZFr2bk0CREl84dCn"}
-{"username":"fdsafdsa","password":"fdsafdsa","_id":"pew44vVR7Ks1X0MK"}
+{"username":"test111","password":"$2a$10$KS/Mnf7XEgauKQcJ8eSV9.K1JEJH.6fadBOReSGVQ4FQGGrKzGFIe","_id":"5jAENxQXPqVZNz5C"}
+{"username":"fdafdsafda","password":"$2a$10$bbCsm3Dxpv4kSCY5nfmZ5utgYRdP/iy/6qCAb.ZCRZ4rC/fqa8W9y","_id":"9pEuqwzPUEVJWR7M"}
+{"username":"test","password":"$2a$10$F0wxM7fNWs6JkzhBrmaa8.5Du/XMy98E8Pz.2tzRClgz1v1vFj.DS","_id":"FONz4QLGGOrzzlIu"}
+{"username":"test34","password":"$2a$10$UZUYEAhoX0fWBpZ2W6tk8.lxE862ChsbjkQl9h21PWrk3owrlL/b6","_id":"aDSvOgK8Mm36S9D5"}
+{"username":"test3","password":"$2a$10$.t6FhrBote3QMq8d9OKi3uMRWxHzHbH0Kryf22jAcol80dyIBN2re","_id":"zbTsN7OcpGPA2M7d"}
 {"$$indexCreated":{"fieldName":"username","unique":true,"sparse":false}}

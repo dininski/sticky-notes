@@ -4,8 +4,9 @@ const usersRouter = express.Router({mergeParams: true});
 const passport = require('passport');
 const db = require('../../database');
 const User = require('../../model/User');
-var errors = require('../../common/errors');
+const errors = require('../../common/errors');
 const notAuthenticatedError = errors.notAuthenticated;
+const bcrypt = require('bcrypt-nodejs');
 
 usersRouter.post('/login', (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
@@ -29,10 +30,11 @@ usersRouter.post('/login', (req, res, next) => {
 
 usersRouter.post('/', (req, res, next) => {
     var user = req.body;
+    var hash = bcrypt.hashSync(user.password);
 
     db.get()
         .then(() => {
-            return User.create({username: user.username, password: user.password}).save();
+            return User.create({username: user.username, password: hash}).save();
         })
         .then((user) => {
             res.status(200).json(user);
@@ -44,7 +46,7 @@ usersRouter.post('/', (req, res, next) => {
 usersRouter.use(restrictedRoute);
 
 usersRouter.get('/logout', (req, res, next) => {
-    req.session.destroy()
+    req.session.destroy();
     res.json({message: 'Success'});
 });
 

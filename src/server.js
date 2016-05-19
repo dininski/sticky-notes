@@ -8,12 +8,14 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const passport = require('passport');
+const process = require('process');
 
 app.use(bodyParser.json());
 app.use(cookieParser());
 require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
+app.set('view engine', 'pug');
 
 app.use(expressSession({
     secret: sessionConfig.sessionSecret,
@@ -24,4 +26,10 @@ app.use(router);
 
 app.listen(httpConfig.port, () => {
     logger.info('Service started on port ' + httpConfig.port);
+});
+
+process.on('SIGTERM', function () {
+    server.close(function () {
+        process.exit(0);
+    });
 });
