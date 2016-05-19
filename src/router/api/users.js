@@ -44,11 +44,11 @@ usersRouter.post('/', (req, res, next) => {
 usersRouter.use(restrictedRoute);
 
 usersRouter.get('/logout', (req, res, next) => {
-    req.logout();
+    req.session.destroy()
     res.json({message: 'Success'});
 });
 
-usersRouter.get('/', (req, res, next) => {
+usersRouter.get('/me', (req, res, next) => {
     const userId = req.session.passport.user;
     User.findOne({_id: userId})
         .then((user)=> {

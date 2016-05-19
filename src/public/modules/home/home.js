@@ -1,17 +1,17 @@
-define('home',
+define(
     [
         'angular',
         'ui-router',
-        'components/home/partials/homeCtrl'
+        'modules/home/partials/homeCtrl'
     ],
     function (angular, uiRouter, homeCtrl) {
         var home = angular.module('home', ['ui.router']);
 
         home.config(['$stateProvider', function ($stateProvider) {
             $stateProvider
-                .state('base.home', {
-                    url: '/home',
-                    templateUrl: 'components/home/partials/home.html',
+                .state('home', {
+                    url: '',
+                    templateUrl: 'modules/home/partials/home.html',
                     controller: homeCtrl
                 });
         }]);

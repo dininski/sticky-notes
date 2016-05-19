@@ -1,0 +1,7 @@
+<div class="note-wrapper" ng-style="{left: note.position.xPos + 'px', top: note.position.yPos + 'px'}">
+    <div class="note" ng-drag="true" ng-drag-data="{obj}"
+         ng-drag-success="onDragComplete($data,$event)">
+    </div>
+
+    <textarea type="text" ng-model="note.text" ng-blur="onInputBlur()"></textarea>
+</div>

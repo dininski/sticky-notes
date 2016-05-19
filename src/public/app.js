@@ -1,29 +1,22 @@
-require(
+define('app',
     [
         'angular',
         'ui-router',
-        'components/home/home'
+        'ng-resource',
+        'modules/home/home',
+        'modules/common/common',
+        'modules/notes/notes',
+        'ng-draggable'
     ],
-    function (angular, uiRouter, home) {
-        var app = angular.module('myApp', ['ui.router', 'home']);
+    function (angular, uiRouter, ngResource, home, services, notes) {
+        var app = angular.module('app', ['ui.router', 'home', 'ngResource', 'common', 'notes']);
 
-        app.config(
-            [
-                '$stateProvider',
-                '$urlRouterProvider',
-                function ($stateProvider, $urlRouterProvider) {
-                    $urlRouterProvider.otherwise('/');
-
-                    $stateProvider
-                        .state('base', {
-                            url: '',
-                            templateUrl: 'components/base/partials/base.html'
-                        });
-                }
-            ]);
+        app.config(['$qProvider', function ($q) {
+            $q.errorOnUnhandledRejections(false);
+        }]);
 
         app.init = function () {
-            angular.bootstrap(document, ['myApp']);
+            angular.bootstrap(document, ['app']);
         };
 
         return app;

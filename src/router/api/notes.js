@@ -54,4 +54,20 @@ notesRouter.delete('/:noteId', (req, res, next) => {
         });
 });
 
+notesRouter.put('/:noteId', (req, res, next) => {
+    const noteId = req.params.noteId;
+    const updateExpression = req.body;
+
+    db.get()
+        .then(() => {
+            return Note.findOneAndUpdate({_id: noteId}, updateExpression);
+        })
+        .then(() => {
+            res.json({message: 'Success'});
+        })
+        .catch((err) => {
+            res.status(400).json({errorCode: errors.databaseError.errorCode, message: err.message});
+        });
+});
+
 module.exports = notesRouter;

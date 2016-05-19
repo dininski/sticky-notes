@@ -1,3 +1,4 @@
-{"username":"test","password":"test","notes":[],"_id":"7Fnvyc7YcK5yKt7u"}
-{"username":"test2","password":"test","notes":[],"_id":"wcI8RU2Vr3lzK4fX"}
+{"username":"test","password":"test","_id":"A5DekCo2VbS1P0QD"}
+{"username":"fdafdas","password":"fdasfdsa","_id":"ZFr2bk0CREl84dCn"}
+{"username":"fdsafdsa","password":"fdsafdsa","_id":"pew44vVR7Ks1X0MK"}
 {"$$indexCreated":{"fieldName":"username","unique":true,"sparse":false}}
