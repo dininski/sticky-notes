@@ -1,7 +1,12 @@
 <div class="note-wrapper" ng-style="{left: note.position.xPos + 'px', top: note.position.yPos + 'px'}">
-    <div class="note-bar" ng-drag="true" ng-drag-data="{obj}"
-         ng-drag-success="onDragComplete($data,$event)">
+    <div class="note-bar">
+        <div class="drag-area" ng-drag="true" ng-drag-data="{obj}"
+             ng-drag-success="onDragComplete($data,$event)">
+        </div>
+        <span ng-click="onDeleteClick(note)" class="delete-btn">X</span>
+
     </div>
 
     <textarea class="note-text" type="text" ng-model="note.text" ng-blur="onInputBlur()"></textarea>
+
 </div>

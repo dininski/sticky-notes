@@ -37,6 +37,15 @@ define(['angular'], function (angular) {
                 .then(function () {
                     $state.transitionTo('home');
                 });
+        };
+
+        $scope.onNoteDelete = function (note) {
+            Note.delete({id: note._id})
+                .$promise
+                .then(function (res) {
+                    var noteToDeleteIndex = $scope.notes.indexOf(note);
+                    $scope.notes.splice(noteToDeleteIndex, 1);
+                });
         }
     }];
 });

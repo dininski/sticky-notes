@@ -13,7 +13,8 @@ define([], function () {
         return {
             templateUrl: 'modules/notes/directives/singleNote/singleNote.html',
             scope: {
-                note: '='
+                note: '=',
+                onDeleteClick: '='
             },
             link: function (scope, element, attrs) {
                 scope.onDragComplete = function (obj, event) {
@@ -25,7 +26,7 @@ define([], function () {
                 scope.onInputBlur = function () {
                     var note = scope.note;
                     onNoteUpdate(note, {text: note.text});
-                }
+                };
             }
         }
     }]
